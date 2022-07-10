@@ -17,4 +17,8 @@ export class PaisService {
     return this.http.get<Country[]>(`${this.apiUrl}/name/${termino}`);
   }
 
+  buscarCapital(termino: string): Observable<Country[]> {
+    return this.http.get<Country[]>(`${this.apiUrl}/capital/${termino}`)
+  }
+
 }
