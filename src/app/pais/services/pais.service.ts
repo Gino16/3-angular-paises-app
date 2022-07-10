@@ -21,4 +21,8 @@ export class PaisService {
     return this.http.get<Country[]>(`${this.apiUrl}/capital/${termino}`)
   }
 
+  getPaisPorAlpha(id: string): Observable<Country[]> {
+    return this.http.get<Country[]>(`${this.apiUrl}/alpha/${id}`);
+  }
+
 }
