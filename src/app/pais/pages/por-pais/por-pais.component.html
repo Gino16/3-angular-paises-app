@@ -16,9 +16,9 @@
 </div>
 <hr />
 
-<div class="alert alert-danger">No se encontró nada con el termino ABASD</div>
+<div *ngIf="hayError" class="alert alert-danger">No se encontró nada con el termino {{this.termino}}</div>
 
-<div class="row">
+<div *ngIf="paises.length > 0" class="row">
   <div class="col">
     <table class="table table-hover">
       <thead>
@@ -31,12 +31,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th>1</th>
-          <th>Imagen</th>
-          <th>Peru</th>
-          <th>123987654</th>
-          <th><a href="#">Ver...</a></th>
+        <tr *ngFor="let pais of paises; let i = index">
+          <th>{{i + 1}}</th>
+          <th>
+            <img class="small-flag" [src]="pais.flags.png" [alt]="pais.name.official">
+          </th>
+          <th>{{pais.name.common}}</th>
+          <th>{{pais.population | number}}</th>
+          <th><a [routerLink]="['/pais', pais.cca2]">Ver...</a></th>
         </tr>
       </tbody>
     </table>
