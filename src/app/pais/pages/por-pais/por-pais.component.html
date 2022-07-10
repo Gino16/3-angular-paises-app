@@ -1,1 +1,44 @@
-<p>por-pais works!</p>
+<h2>Por Pais</h2>
+<hr />
+
+<div class="row">
+  <div class="col">
+    <form autocomplete="off" (ngSubmit)="buscar()">
+      <input
+        class="form-control"
+        type="text"
+        name="termino"
+        [(ngModel)]="termino"
+        placeholder="Buscar por nombre pais..."
+      />
+    </form>
+  </div>
+</div>
+<hr />
+
+<div class="alert alert-danger">No se encontró nada con el termino ABASD</div>
+
+<div class="row">
+  <div class="col">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Bandera</th>
+          <th>Nombre</th>
+          <th>Poblacion</th>
+          <th>Ver más</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <th>Imagen</th>
+          <th>Peru</th>
+          <th>123987654</th>
+          <th><a href="#">Ver...</a></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
